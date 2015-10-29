@@ -14,7 +14,7 @@ public class PersonServer {
         try {
             Container container = new Container();
             JAXRSArchive jaxrsArchive = ShrinkWrap.create(JAXRSArchive.class);
-            jaxrsArchive.addPackages(true, "org.shipstone.sandbox.swarm");
+            jaxrsArchive.addPackages(true, PersonServer.class.getPackage());
             jaxrsArchive.addAllDependencies();
             container.start().deploy(jaxrsArchive);
         } catch (Exception e) {
